@@ -133,6 +133,12 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\App.Core\App.Core.csproj">
+      <Project>{786e1d0a-33a6-4782-8cff-289c77940384}</Project>
+      <Name>App.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\App\App.projitems" Label="Shared" />
 </Project>

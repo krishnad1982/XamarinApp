@@ -17,12 +17,13 @@ namespace App.Views
             // Build the Menu
             MainMenuItems = new List<MainMenuItems>
             {
+               new MainMenuItems() { Title = "Home", Icon = "menu_home.png", TargetType = typeof(Home) },
                new MainMenuItems() { Title = "About", Icon = "menu_about.png", TargetType = typeof(About) },
                new MainMenuItems() { Title = "Contact", Icon = "menu_contact.png", TargetType = typeof(Contact) }
             };
 
             // Set the default page, this is the "home" page.
-            Detail = new NavigationPage(new About());
+            Detail = new NavigationPage(new Home());
 
             InitializeComponent();
         }
@@ -39,6 +40,10 @@ namespace App.Views
                 else if (item.Title.Equals("Contact"))
                 {
                     Detail = new NavigationPage(new Contact());
+                }
+                else if (item.Title.Equals("Home"))
+                {
+                    Detail = new NavigationPage(new Home());
                 }
 
                 MenuListView.SelectedItem = null;
