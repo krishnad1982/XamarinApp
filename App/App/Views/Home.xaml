@@ -1,16 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:App.ViewModels"
-             x:Class="App.Views.Home">
+             xmlns:cv="clr-namespace:CardView;assembly=CardView"
+             x:Class="App.Views.Home" Title="Home">
     <ContentPage.Content>
-        <ListView>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding News}"
-                          Detail="{Binding Description}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackLayout>
+            <ListView x:Name="My_Articles" ItemsSource="{Binding Articles}" VerticalOptions="FillAndExpand" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <cv:CardView>
+                                <cv:CardView.CardViewContent>
+                                    <StackLayout>
+                                        <Image Source="{Binding Image}" Aspect="Fill"></Image>
+                                        <Label Text="{Binding Title}"  FontSize="Default" TextColor="Black"  />
+                                    </StackLayout>
+                                </cv:CardView.CardViewContent>
+                            </cv:CardView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+

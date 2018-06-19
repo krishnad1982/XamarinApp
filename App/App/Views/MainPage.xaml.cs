@@ -23,7 +23,7 @@ namespace App.Views
             };
 
             // Set the default page, this is the "home" page.
-            Detail = new NavigationPage(new Home());
+            Detail = new NavigationPage(new Home() { Title = "Home" });
 
             InitializeComponent();
         }
@@ -35,15 +35,15 @@ namespace App.Views
             {
                 if (item.Title.Equals("About"))
                 {
-                    Detail = new NavigationPage(new About());
+                    Detail = new NavigationPage(new About() { Title = item.Title });
                 }
                 else if (item.Title.Equals("Contact"))
                 {
-                    Detail = new NavigationPage(new Contact());
+                    Detail = new NavigationPage(new Contact() { Title = item.Title });
                 }
                 else if (item.Title.Equals("Home"))
                 {
-                    Detail = new NavigationPage(new Home());
+                    Detail = new NavigationPage(new Home() { Title = item.Title });
                 }
 
                 MenuListView.SelectedItem = null;

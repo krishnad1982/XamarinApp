@@ -1,19 +1,12 @@
-﻿using App.Models;
-using App.Core;
-using System;
-using System.Collections.Generic;
+﻿using App.Core;
 using System.Collections.ObjectModel;
-using System.Net.Http;
-using System.Text;
+using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace App.ViewModels
 {
-    public class HomeViewModel
+    public class HomeViewModel: INotifyPropertyChanged
     {
-
-        public string Name { get; set; } = "Krishna";
-        public List<Articles> _articles;
         private readonly HttpUtility _httpUtility;
 
         public HomeViewModel()
@@ -21,23 +14,20 @@ namespace App.ViewModels
             _httpUtility = new HttpUtility();
         }
 
-        public List<Articles> News
+        public ObservableCollection<Articles> Articles { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
         {
-            get
-            {
-                GetNews();
-                return _articles;
-            }
-            set
-            {
-                _articles = value;
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private async void GetNews()
+        public async Task GetNews()
         {
-            var news = await _httpUtility.GetNews();
-            _articles = news.Articles;
+            var articles= await _httpUtility.GetNews();
+            Articles = new ObservableCollection<Articles>(articles.Articles);
+            OnPropertyChanged("Articles");
         }
     }
 }

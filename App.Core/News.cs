@@ -17,5 +17,7 @@ namespace App.Core
         public string Title { get; set; }
         [JsonProperty("description")]
         public string Description { get; set; }
+        [JsonProperty("urlToImage")]
+        public string Image { get; set; }
     }
 }
