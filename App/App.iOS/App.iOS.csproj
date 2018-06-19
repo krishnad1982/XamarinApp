@@ -123,6 +123,10 @@
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\hamburger_menu.png" />
+    <BundleResource Include="Resources\menu_about.png" />
+    <BundleResource Include="Resources\menu_contact.png" />
+    <BundleResource Include="Resources\menu_home.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -131,9 +135,11 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
     <PackageReference Include="XamarinForms.CardView">
       <Version>1.1.1.5</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>3.0.0.561731</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
