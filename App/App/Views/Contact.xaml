@@ -2,34 +2,44 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App.Views.Contact" Title="Contact">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button" BaseResourceKey="BodyStyle">
+                <Setter Property="WidthRequest" Value="90" />
+                <Setter Property="HeightRequest" Value="40" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout >
-           
-            <Entry Placeholder="Name"></Entry>
-            <Entry Placeholder="Email"></Entry>
-            <Picker Title="Gender"
+        <ScrollView VerticalOptions="FillAndExpand"
+                    Margin="10">
+            <StackLayout >
+
+                <Entry Placeholder="Name"></Entry>
+                <Entry Placeholder="Email"></Entry>
+                <Picker Title="Gender"
                 Margin="1, 0">
-                <Picker.Items>
-                    <x:String>Male</x:String>
-                    <x:String>Female</x:String>
-                </Picker.Items>
-            </Picker>
-            <Label Text="Message" FontSize="Medium"/>
-            <Editor/>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start">
-            <Button Text="Submit!"
+                    <Picker.Items>
+                        <x:String>Male</x:String>
+                        <x:String>Female</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="Message" FontSize="Medium"/>
+                <Editor/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start">
+                    <Button Text="Submit!" Style="{StaticResource ButtonStyle}" 
                     BackgroundColor="Green"
                 BorderWidth="1"
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand"/>
-            <Button Text="Cancel!"
+                    <Button Text="Cancel!" Style="{StaticResource ButtonStyle}" 
                 BorderWidth="1"
                     BackgroundColor="OrangeRed"
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand" Clicked="Button_Clicked"/>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
 
-       
     </ContentPage.Content>
 </ContentPage>

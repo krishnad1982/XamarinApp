@@ -12,7 +12,18 @@
                     <!-- Menu background color -->
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ImageCell Text="{Binding Title}" ImageSource="{Binding Icon}" TextColor="Black"/>
+                            <!--<ImageCell Text="{Binding Title}" ImageSource="{Binding Icon}" TextColor="Black"/>-->
+                            <ViewCell>
+                                <Grid Padding="5,10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding Icon}" WidthRequest="25" HeightRequest="25" />
+                                    <Label Grid.Column="1" Text="{Binding Title}" />
+                                </Grid>
+                            </ViewCell>
+
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
