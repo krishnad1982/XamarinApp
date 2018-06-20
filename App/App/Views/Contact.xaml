@@ -23,11 +23,11 @@
                 <Editor Keyboard="Default">
                 </Editor>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start">
-                    <Button Text="Submit!" StyleClass="buttonSuccess"
+                    <Button Text="Submit!" StyleClass="buttonSuccess" WidthRequest="90"
                 
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand"/>
-                    <Button Text="Cancel!" StyleClass="buttonDanger"
+                    <Button Text="Cancel!" StyleClass="buttonDanger" WidthRequest="90"
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand" Clicked="Button_Clicked"/>
                 </StackLayout>
