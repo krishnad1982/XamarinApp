@@ -13,7 +13,7 @@ namespace App.Views
         HomeViewModel homeViewModel;
         public Home ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
             homeViewModel = new HomeViewModel();
             BindingContext = homeViewModel;
         }

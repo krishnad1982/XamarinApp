@@ -20,11 +20,9 @@
                     Margin="10">
 
             <Label Style="{StaticResource LabelStyle}" Text="Since 1922 when the first Australian standards and technical documents were created to assist with the successful building of Sydney's iconic Harbor Bridge, our experts have helped companies transform the way they manage, approach and leverage risk.
-        &#10;&#10;Today's world is vastly different, and far more complex. Globalization, digitization and advances in technology have dramatically changed the way companies operate as well as the sheer velocity and number of risks faced. More than
-                   ever before, these risks have the ability to severely impact business operations, resilience and brand reputation
+        &#10;&#10;Today's world is vastly different, and far more complex. Globalization, digitization and advances in technology have dramatically changed the way companies operate as well as the sheer velocity and number of risks faced. More than ever before, these risks have the ability to severely impact business operations, resilience and brand reputation
         &#10;&#10;Managing risk proactively is now a strategic imperative, and taking an integrated approach to managing risk and compliance has never been more important.
-        &#10;&#10;We help companies take a more integrated approach to managing risk. Our world-class solutions and renowned team of experts provide advice at every step ensuring companies have the information they need to make the decisions required
-                   to protect and grow their businesses and their reputation.
+        &#10;&#10;We help companies take a more integrated approach to managing risk. Our world-class solutions and renowned team of experts provide advice at every step ensuring companies have the information they need to make the decisions required to protect and grow their businesses and their reputation.
         &#10;&#10;We have global reach with locations across Europe, the Middle East, Africa, the Americas, Asia and the Pacific, powered by local expertise and knowhow."/>
         </ScrollView>
     </StackLayout>

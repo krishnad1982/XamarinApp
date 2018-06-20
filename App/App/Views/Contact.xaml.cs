@@ -14,7 +14,7 @@ namespace App.Views
 	{
 		public Contact ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
 
         private async void Button_Clicked(object sender, EventArgs e)

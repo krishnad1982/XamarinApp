@@ -1,0 +1,10 @@
+﻿.buttonSuccess {
+    background-color: green;
+    color: white;
+    border:1px;
+}
+.buttonDanger {
+    background-color: orangered;
+    color: white;
+    border: 1px;
+}
