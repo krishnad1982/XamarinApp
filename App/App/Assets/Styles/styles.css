@@ -8,3 +8,6 @@
     color: white;
     border: 1px;
 }
+^ContentPage {
+    background-color: #F5F5F5;
+}

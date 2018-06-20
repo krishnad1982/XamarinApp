@@ -1,7 +1,5 @@
 ﻿using App.Core;
 using App.ViewModels;
-using System.Collections.ObjectModel;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,6 +20,16 @@ namespace App.Views
         {
             base.OnAppearing();
             await homeViewModel.GetNews();
+        }
+
+        private async void My_Articles_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var item = e.Item as Articles;
+            var details = new ArticleDetails
+            {
+                BindingContext = item
+            };
+            await Navigation.PushAsync(details);
         }
     }
 }

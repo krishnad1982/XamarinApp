@@ -2,21 +2,63 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cv="clr-namespace:CardView;assembly=CardView"
+             xmlns:local="clr-namespace:App.Converters"
              x:Class="App.Views.Home" Title="Home">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:DatetimeConverter x:Key="cnvDateTimeConverter"></local:DatetimeConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="My_Articles" ItemsSource="{Binding Articles}" VerticalOptions="FillAndExpand" HasUnevenRows="True">
+            <ListView x:Name="My_Articles" Margin="0,8,0,0" ItemsSource="{Binding Articles}" SeparatorVisibility="None" HasUnevenRows="True" ItemTapped="My_Articles_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <cv:CardView>
-                                <cv:CardView.CardViewContent>
-                                    <StackLayout>
-                                        <Image Source="{Binding Image}" Aspect="Fill"></Image>
-                                        <Label Text="{Binding Title}"  FontSize="Default" TextColor="Black"  />
-                                    </StackLayout>
-                                </cv:CardView.CardViewContent>
-                            </cv:CardView>
+                            <StackLayout Padding="8,8,8,8" Orientation="Vertical">
+                                <cv:CardView CardViewOutlineColor="Gray" CardViewOutlineColorThickness="1" CardViewHasShadow="True">
+                                    <cv:CardView.CardViewContent>
+                                        <StackLayout BackgroundColor="White"
+                                        Padding="10"
+                                        HorizontalOptions="Center"
+                                        Spacing="10"
+                                        VerticalOptions="Center">
+                                            <Image Aspect="Fill" Source="{Binding Image}" />
+                                            <BoxView
+                                            HeightRequest="1"
+                                            WidthRequest="275"
+                                            Color="LightGray" />
+                                            <Grid>
+                                                <Label
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="15,0,0,0"
+                                                FontSize="Medium"
+                                                Text="{Binding Title}" />
+                                            </Grid>
+                                            <BoxView
+                                            HeightRequest="1"
+                                            WidthRequest="275"
+                                            Color="LightGray" />
+                                            <Grid>
+                                                <Label
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Margin="15,0,0,0"
+                                                FontSize="Small"
+                                                Text="{Binding Author}" />
+                                                <Label
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Margin="0,0,15,0"
+                                                FontSize="Small"
+                                                HorizontalTextAlignment="End"
+                                                Text="{Binding PublishedAt,Converter={StaticResource cnvDateTimeConverter}}" />
+                                            </Grid>
+                                        </StackLayout>
+                                    </cv:CardView.CardViewContent>
+                                </cv:CardView>
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

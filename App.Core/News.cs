@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace App.Core
 {
@@ -19,5 +17,11 @@ namespace App.Core
         public string Description { get; set; }
         [JsonProperty("urlToImage")]
         public string Image { get; set; }
+        [JsonProperty("publishedAt")]
+        public string PublishedAt { get; set; }
+        [JsonProperty("author")]
+        public string Author { get; set; }
+        [JsonProperty("url")]
+        public string Content { get; set; }
     }
 }
